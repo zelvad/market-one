@@ -1,0 +1,1 @@
+$(document).ready(function(){var e=new URLSearchParams(window.location.search);e.get("cens");e.get("t")&&$(".censor-tt").hide()});
