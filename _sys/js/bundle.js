@@ -3823,7 +3823,7 @@ var SentryDomain, debounce = function(n, r) {
             return {
                 checkbox: !1,
                 checkbox2: !1,
-                isCheckboxVisible: !0,
+                isCheckboxVisible: 0,
                 email: null,
                 error: !1,
                 isBtnLoader: !1,
@@ -3831,16 +3831,17 @@ var SentryDomain, debounce = function(n, r) {
             }
         },
         props: ["formId", "btnText", "inputText", "btnContent", "customBtn", "html", "refLink", "tiktok", "vk", "product"],
-        template: '\n     <form :class="\'form form--\' + formId" :id="formId" action="https://yourdailyplan.online/default-subscribe" method="GET">\n            <div class="input-wrap">\n      <input type="hidden" name="clickid" v-model="clickId">          <input class="form__email" :placeholder="inputText" name="email" id="email"\n                type="email" v-model="email">\n            </div>\n            <input type="hidden" id="js-product-id" name="order[products][]" :value="product.id">\n            <p class="form__error" v-show="error">Укажите корректный email</p>\n            <div class="form__content">\n                <button v-if="customBtn" class="form__button button button--form" :class="{\'form__button-loader\': isBtnLoader}" :content="btnContent" type="submit" :disabled="!setBtnDisabled || isBtnLoader" v-html="html"></button>\n                <button v-else class="form__button button button--form" :class="{\'form__button-loader\': isBtnLoader}" :content="btnContent" type="submit" :disabled="!setBtnDisabled || isBtnLoader">{{ btnText }}</button>\n                <div class="form__check">\n                    <input class="form__check-input" type="checkbox" :id="\'checkbox-\' + formId" v-model="checkbox">\n                    <label class="form__check-box" :for="\'checkbox-\' + formId">\n                        <span class="form__check-text" v-html="\'Нажимая кнопку &#34;\' + btnText + \'&#34; \' + product.firstCheckbox"></span>\n                    </label>\n                </div>\n                <div class="form__check2" v-if="isCheckboxVisible">\n                    <input class="form__check-input" type="checkbox" :id="\'checkbox2-\' + formId" v-model="checkbox2">\n                    <label class="form__check-box" :for="\'checkbox2-\' + formId">\n                        <span class="form__check-text" v-html="\'Нажимая кнопку &#34;\' + btnText + \'&#34; \' + product.secondCheckbox"></span>\n                    </label>\n                </div>\n            </div>\n     </form>',
+        template: '\n     <form :class="\'form form--\' + formId" :id="formId" action="https://marketplacewb.site/wild-subscribe" method="GET">\n            <div class="input-wrap">\n      <input type="hidden" name="clickid" v-model="clickId">          <input class="form__email" :placeholder="inputText" name="email" id="email"\n                type="email" v-model="email">\n            </div>\n            <input type="hidden" id="js-product-id" name="order[products][]" :value="product.id">\n            <p class="form__error" v-show="error">Укажите корректный email</p>\n            <div class="form__content">\n                <button v-if="customBtn" class="form__button button button--form" :class="{\'form__button-loader\': isBtnLoader}" :content="btnContent" type="submit" :disabled="!setBtnDisabled || isBtnLoader" v-html="html"></button>\n                <button v-else class="form__button button button--form" :class="{\'form__button-loader\': isBtnLoader}" :content="btnContent" type="submit" :disabled="!setBtnDisabled || isBtnLoader">{{ btnText }}</button>\n                <div class="form__check">\n                    <input class="form__check-input" type="checkbox" :id="\'checkbox-\' + formId" v-model="checkbox">\n                    <label class="form__check-box" v-if="isCheckboxVisible" :for="\'checkbox-\' + formId">\n                        <span class="form__check-text" v-html="\'Нажимая кнопку &#34;\' + btnText + \'&#34; \' + product.firstCheckbox"></span>\n                    </label>\n                </div>\n                <div class="form__check2" v-if="isCheckboxVisible">\n                    <input class="form__check-input" type="checkbox" :id="\'checkbox2-\' + formId" v-model="checkbox2">\n                    <label class="form__check-box" :for="\'checkbox2-\' + formId">\n                        <span class="form__check-text" v-html="\'Нажимая кнопку &#34;\' + btnText + \'&#34; \' + product.secondCheckbox"></span>\n                    </label>\n                </div>\n            </div>\n     </form>',
         mounted: function() {
-            "localhost" === window.location.hostname && this.setCheckboxes()
+            "localhost" === window.location.hostname && this.setCheckboxes();
+
         },
         updated: function() {
             !1 === this.componentUpdated && (this.componentUpdated = !0, this.setCheckboxes())
         },
         computed: {
             setBtnDisabled: function() {
-                return !!(this.isCheckboxVisible && this.checkbox && this.checkbox2 || !this.isCheckboxVisible && this.checkbox)
+                return !!(this.isCheckboxVisible && this.checkbox && this.checkbox2 || !this.isCheckboxVisible)
             },
             isEmailValid: function() {
                 var t;
@@ -4014,10 +4015,10 @@ var SentryDomain, debounce = function(n, r) {
                     cover: "/account/files/cover/products/92.jpg?1654012290",
                     description: "Тут обычно описание продукта приходит, всякие бла бла бла какой крутой продукт или просто слоган какой-нибудь",
                     tariffDescription: "11",
-                    price: 27,
-                    oldPrice: 889,
-                    displayPrice: 27,
-                    displayOldPrice: 889,
+                    price: 1,
+                    oldPrice: 980,
+                    displayPrice: 1,
+                    displayOldPrice: 980,
                     refundInitial: !0,
                     initialPrice: 1,
                     partPrice: 100,
